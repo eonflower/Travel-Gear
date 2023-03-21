@@ -21,9 +21,9 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 // ROUTES
-app.use("/techGear", require("./routes/techGearRouter.js"))
+app.use("/techGear", require("./Routes/techGearRouter.js"))
 
-app.use("/photography", require("./routes/photographyRouter.js"))
+app.use("/photography", require("./Routes/photographyRouter.js"))
 
 
 // ERROR HANDLER
