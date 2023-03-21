@@ -1,1 +1,1 @@
-# trave-tech
+# travel-tech
