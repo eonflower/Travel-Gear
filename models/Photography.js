@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schemas
 
 const photographySchema = new Schema({
-  catagory: {
+  catagery: {
     type: String,
     required: true,
   },

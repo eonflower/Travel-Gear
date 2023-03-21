@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const techGearSchema = new Schema({
-  catagory: {
+  category: {
     type: String,
     required: true,
   },
