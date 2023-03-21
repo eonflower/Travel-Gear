@@ -1,7 +1,11 @@
 const mongoose = require("mongoose")
-const Schema = mongoose.Schema
+const Schema = mongoose.Schemas
 
 const photographySchema = new Schema({
+  catagory: {
+    type: String,
+    required: true,
+  },
   brand: {
     type: String,
     required: true,
