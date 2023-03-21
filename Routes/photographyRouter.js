@@ -1,7 +1,6 @@
 const express = require("express");
 const photographyRouter = express.Router();
 const Photography = require("../models/Photography.js");
-// const { default: PhotoGear } = require("../travel-tech-gear/src/Pages/PhotoGear.jsx");
 
 
 //GET ALL
