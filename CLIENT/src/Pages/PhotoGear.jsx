@@ -6,7 +6,13 @@ function PhotoGear() {
   console.log(photoGear)
 
   return (
+    <>
+    <div className="camera">
+    <h2 className="camera-text-top">Capture the moment. </h2>
+    <h2 className="camera-text-bottom">Elevate your art with premium camera gear.</h2>
+    </div>
     <div className='photogear'>
+      
     {photoGear.map((item) => (
       <div className="gear-page-item" key={item._id}>
         <img className="gear-img" src={item.imgURL} alt={item.title} id='photo-gear-img' />
@@ -21,6 +27,7 @@ function PhotoGear() {
       </div>
     ))}
   </div>
+  </>
   )
 }
 

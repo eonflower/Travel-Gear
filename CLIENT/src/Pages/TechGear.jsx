@@ -8,6 +8,10 @@ function TechGear() {
  
 
   return (
+    <>
+    <div className="tech">
+    <h2 className="tech-text">Gear that works as hard as you do - built to last, ready for anything</h2>
+    </div>
     <div className='techgear'>
       {techGear.map((item) => (
         <div className="gear-page-item" key={item._id}>
@@ -23,6 +27,7 @@ function TechGear() {
         </div>
       ))}
     </div>
+    </>
   );
 }
 
