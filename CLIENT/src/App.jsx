@@ -5,7 +5,7 @@ import HomePage from "./Pages/HomePage";
 import TechGear from "./Pages/TechGear";
 import Wishlist from "./Pages/WishList";
 import PhotoGear from "./Pages/PhotoGear";
-
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         <Route path='/photography' exact element={<PhotoGear />} />
         <Route path='/wishlist' exact element={<Wishlist />} />
       </Routes>
+      <Footer/>
        
     </div>
   )
