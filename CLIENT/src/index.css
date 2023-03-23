@@ -140,3 +140,27 @@ color:#7E8BBA
   display: flex;
   justify-content: center;
 }
+
+.footer {
+  margin-top: 1rem;
+  position: static;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  color: #0D244A;
+  background-image: url(./assets/navGrid.svg);
+  background-size: cover;
+  width: 100%;
+  height: 130px;
+}
+
+#footer-text {
+  margin-block: 50px; 
+  font-size: 20px;
+}
+
+.fa-github {
+  margin: 0px 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
