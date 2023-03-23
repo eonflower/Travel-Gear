@@ -142,11 +142,10 @@ color:#7E8BBA
 }
 
 .footer {
-  margin-top: 1rem;
+  margin-top: 15px;
   position: static;
   bottom: 0;
-  display: flex;
-  justify-content: center;
+  display: block;
   color: #0D244A;
   background-image: url(./assets/navGrid.svg);
   background-size: cover;
@@ -154,13 +153,45 @@ color:#7E8BBA
   height: 130px;
 }
 
-#footer-text {
-  margin-block: 50px; 
-  font-size: 20px;
+.copyrite, .credits {
+  /* border: 1px solid red; */
+  display: inline-block;
+  width: 50%;
+  text-align: center;
 }
 
-.fa-github {
-  margin: 0px 5px;
-  cursor: pointer;
+.copyrite {
+  justify-content: center;
+  margin-top: 10px;
+  border-right:1.5px solid #7E8BBA;
+  height: 80%;
+}
+
+.credit-info{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#credit-title {
+  margin: 10px ;
+}
+
+#credit-title-right{
   font-size: 20px;
+  padding-bottom: 8px;
+}
+#github-repo-link{
+  margin-top: 8px;
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+.fa-github {
+  cursor: pointer;
+  font-size: 30px;
+  padding-left: 10px;
+
+}
+
+#github-repo-link:hover ,#github-icon:hover{
+  color: #7E8BBA;
 }
