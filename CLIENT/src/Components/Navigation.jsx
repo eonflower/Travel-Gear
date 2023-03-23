@@ -11,10 +11,10 @@ function Navigation() {
         HOME
       </NavLink>
       <NavLink to= "/techGear" className="tech-gear-link">
-        TECH GEAR
+        TECH
       </NavLink>
       <NavLink to= "/photography" className="photo-gear-link">
-        PHOTOGRAPY GEAR
+        PHOTOGRAPHY
       </NavLink>
       <NavLink to= "/wishlist" className="wishlist-link">
         WISHLIST
