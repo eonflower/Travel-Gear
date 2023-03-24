@@ -6,14 +6,14 @@ import { WishlistContext } from '../WishlistContext';
 
 export default function TechCard() {
     const { techGear } = useContext(TechGearContext);
-    // const { wishlist, setWishlist } = useContext(WishlistContext)
+    const { addToWishlist } = useContext(WishlistContext)
     // console.log(techGear);
 
-    const addToWishlist = (newWishlistItem) => {
-        axios.post("api/wishlist", newWishlistItem)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-    };
+    // const addToWishlist = (newWishlistItem) => {
+    //     axios.post("api/wishlist", newWishlistItem)
+    //     .then(res => console.log(res))
+    //     .catch(err => console.log(err))
+    // };
 
     return (
     <>
