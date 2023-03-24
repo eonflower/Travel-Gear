@@ -1,11 +1,11 @@
 import react from "react"
 import {Route, Routes} from "react-router-dom";
-import Navigation from "./Components/Navigation";
-import HomePage from "./Pages/HomePage";
-import TechGear from "./Pages/TechGear";
-import Wishlist from "./Pages/WishList";
-import PhotoGear from "./Pages/PhotoGear";
-import Footer from "./Components/Footer";
+import Navigation from "./Components/Navigation"; // imports the Navigation component
+import HomePage from "./Pages/HomePage"; // imports the HomePage component
+import TechGear from "./Pages/TechGear"; // imports the TechGear component
+import Wishlist from "./Pages/WishList"; // imports the Wishlist component
+import PhotoGear from "./Pages/PhotoGear"; // imports the PhotoGear component
+import Footer from "./Components/Footer"; // imports the Footer component
 
 function App() {
   return (
