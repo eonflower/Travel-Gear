@@ -10,14 +10,15 @@ import Footer from "./Components/Footer"; // imports the Footer component
 function App() {
   return (
     <div className="App">
-     <Navigation /> {/* renders the Navigation component */}
-      <Routes>
-        <Route path='/' exact element={<HomePage />} /> {/* defines a route for the home page */}
-        <Route path='/techGear' exact element={<TechGear />} /> {/* defines a route for the TechGear page */}
-        <Route path='/photography' exact element={<PhotoGear />} /> {/* defines a route for the PhotoGear page */}
-        <Route path='/wishlist' exact element={<Wishlist />} /> {/* defines a route for the Wishlist page */}
-      </Routes>
-      <Footer/> {/* renders the Footer component */}
+      <Navigation />
+        <Routes>
+          <Route path='/' exact element={<HomePage />} />
+          <Route path='/techGear' exact element={<TechGear />} />
+          <Route path='/photography' exact element={<PhotoGear />} />
+          <Route path='/wishlist' exact element={<Wishlist />} />
+        </Routes>
+      <Footer/>
+      
     </div>
   )
 }

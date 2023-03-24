@@ -13,9 +13,9 @@ function PhotographyContextProvider(props) {
   }, []);
 
   return (
-   <PhotographyContext.Provider value={{ photoGear}}>
-    {props.children}
-   </PhotographyContext.Provider>
+    <PhotographyContext.Provider value={{ photoGear}}>
+      {props.children}
+    </PhotographyContext.Provider>
   )
 }
 

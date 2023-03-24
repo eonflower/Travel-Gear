@@ -15,7 +15,10 @@ function HomePage(props) {
 
   return (
   <div className="homepage">
-    <br/>
+    <div className="flowers">
+    <h2 className="flowers-text">Spring into adventure with style and comfort.</h2>
+    </div>
+
     <div className="techGear-slider">
       <h1 className="techGear-title">Tech Gear</h1>
     <Slider dots={true} infinite={true} autoplay={true} autoplaySpeed={3000} speed={500} slidesToShow={3} slidesToScroll={1}>
@@ -24,13 +27,17 @@ function HomePage(props) {
       <img src={item.imgURL} alt={item.title} id='tech-gear-img' />
       <h1 className="item-brand">{item.brand}</h1>
       <h2 className="item-name">{item.name}</h2>
-      <p>{item.description.slice(0, 200)}{item.description.length > 200 ? "..." : ""}</p>
+      {/* <p>{item.description.slice(0, 200)}{item.description.length > 200 ? "..." : ""}</p> */}
     </div>
   ))}
   </Slider>
   </div>
 
-  <div className="home-gradient"></div>
+  <div className="home-tagline">
+    <hr className="tag-break-top" />
+    <h2 className="tagline-text">Tech-up your travels with gear that goes the extra mile</h2>
+    <hr className="tag-break-bottom" />
+  </div>
 
   <div className="photoGear-slider">
     <h1 className="photoGear-title">Photography Gear</h1>
@@ -40,7 +47,7 @@ function HomePage(props) {
       <img className="gear-img" src={item.imgURL} alt={item.title} id='tech-gear-img' />
       <h1 className="item-brand">{item.brand}</h1>
       <h2 className="item-name">{item.name}</h2>
-      <p>{item.description.slice(0, 200)}{item.description.length > 200 ? "..." : ""}</p>
+      {/* <p>{item.description.slice(0, 200)}{item.description.length > 200 ? "..." : ""}</p> */}
     </div>
   ))}
 </Slider>
