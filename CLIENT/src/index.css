@@ -72,42 +72,51 @@ html, body {
   opacity: .9;
   height: 300px;
   background-size: cover;
-  background-position: 50%;
+  background-attachment: fixed;
 }
 
 .flowers {
   background-image: url("./assets/purple-flowers.jpg");
+  background-position: 20% 90%;
 }
 
 .camera {
   background-image: url("./assets/camera.jpg");
+  background-position: 20% 50%;
 }
 
 .tech {
-  background-image: url("./assets/packing.jpg")
+  background-image: url("./assets/packing.jpg");
+  background-position: 50%;
 }
 
 .camera-text-bottom, .camera-text-top {
   position: absolute;
   font-weight: 400;
   color: #181818;
-  background-color: #ffffff4a;
+  background-color: #ffffff69;
   padding: .5rem;
 }
 
 .camera-text-bottom {
+  font-size: 1rem;
   right: .5rem;
   bottom: .2rem;
 }
 
 .camera-text-top{
+  font-size: 1rem;
   right: 2rem;
   top: 5rem;
 }
 
 .flowers-text {
-padding: 3rem;
+position: absolute;
+left: 13rem;
+padding: .5rem;
 font-weight: 600;
+color: #181818;
+background-color: #ffffff4a;
 }
 
 .tech-text {
@@ -119,14 +128,6 @@ font-weight: 600;
   bottom: 0;
   font-weight: 400;
   color: #1a1a1af6;
-}
-
-.home-gradient {
-  margin: 1rem auto;
-  opacity: .85;
-  height: 200px;
-  width: 99%;
-  background-image: url(./assets/bokeh.jpg);
 }
 
 .tagline-text {
@@ -222,6 +223,7 @@ color:#7E8BBA
 }
 
 .techgear, .photogear {
+  padding: 1rem .25rem;
   margin: 1rem;
   display: flex;
   justify-content: space-around;
@@ -239,8 +241,26 @@ color:#7E8BBA
 }
 
 .gear-page-item {
+  position: relative;
   width: 350px;
   padding: 1rem;
+  box-shadow: 0px 0px 5px rgb(168, 167, 167);
+
+  transition: all ease-in-out .3s;
+}
+
+.gear-page-item:hover {
+  box-shadow: 0px 0px 5px rgb(88, 131, 131);
+  transition: all ease-in-out .3s;
+}
+
+.add-to-wishlist {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 2rem;
+  border: none;
+  background: none;
 }
 
 .gear-img {
@@ -251,6 +271,7 @@ color:#7E8BBA
   display: flex;
   justify-content: center;
 }
+
 
 .footer {
   margin-top: 15px;
@@ -289,9 +310,9 @@ color:#7E8BBA
 
 
 #github-repo-link{
-  margin-top: 8px;
-  font-size: 50px;
+  font-size: 45px;
 }
+
 .fa-github {
   cursor: pointer;
   font-size: 30px;
@@ -338,26 +359,40 @@ color:#7E8BBA
   #tech-gear-img {height: 250px; width: 250px;}
   .item-brand {font-size: 1.8rem;}
   .item-name {font-size: 1.2rem;}
+  .item-type, .item-size {font-size: .9rem;}
+  #github-repo-link {margin-top: 10px;}
+  .camera {
+    background-position: 50% 80%;
+  }
 }
 
 @media screen and (max-width: 1200px) {
   #tech-gear-img {height: 200px; width: 200px;}
   .item-brand {font-size: 1.5rem;}
   .item-name {font-size: 1rem;}
+  .item-type, .item-size {font-size: .8rem;}
+  #github-repo-link {margin-top: 10px;}
+  .camera {
+    background-position: 50% 70%;
+  }
 }
 
 @media screen and (max-width: 800px) {
   #tech-gear-img {height: 150px; width: 150px;}
   .item-brand {font-size: 1.2rem;}
   .item-name {font-size: .8rem;}
+  .item-type, .item-size {font-size: .7rem;}
   #credit-title, #credit-title-right {font-size: 1rem;}
+  .flowers-text {left: 2rem; font-size: 1rem;}
+  .tech-text, .camera-text-bottom, .camera-text-top {font-size: .8rem;}
 }
 
 @media screen and (max-width: 650px) {
   #tech-gear-img {height: 100px; width: 100px;}
   .item-container {padding: .2rem;}
   .item-brand {font-size: 1.2rem;}
-  .item-name {font-size: .7rem;}
+  .item-name {font-size: .75rem;}
+  .item-type, .item-size {font-size: .65rem;}
   .photoGear-title, .techGear-title {font-size: 1.2rem;}
   .photoGear-title {width: 190px}
   .techGear-title {width: 110px}
@@ -367,19 +402,23 @@ color:#7E8BBA
   #credit-title, #credit-title-right {font-size: .7rem;}
   .github-links, .github-master {height: 60px; width: 60px;}
   .fa-github {font-size: 25px;}
-  #github-repo-link {font-size: 35px; padding: .2rem;}
+  #github-repo-link {font-size: 35px; padding: .5rem;}
   .github-links {font-size: .6rem; padding: .7rem 0;}
 }
 
 @media screen and (max-width: 500px) {
-  #tech-gear-img {height: 70px; width: 70px;}
-  .item-brand {font-size: .8rem;}
-  .item-name {font-size: .5rem;}
+  p {font-size: .69rem;}
+  #tech-gear-img {height: 65px; width: 65px;}
+  .item-brand {font-size: 1rem;}
+  .item-name {font-size: .75rem;}
+  .item-type, .item-size {font-size: .65rem;}
   .home-link, .tech-gear-link, .photo-gear-link, .wishlist-link {font-size: .5rem;}
   #credit-title, #credit-title-right {font-size: .6rem; padding-bottom: 1rem;}
-  .github-links, .github-master {height: 50px; width: 50px;}
-  .fa-github {font-size: 21px;}
-  #github-repo-link {font-size: 32px; margin: 0;}
-  .github-links {font-size: .5rem; padding: .5rem 0;}
+  .github-links, .github-master {height: 45px; width: 45px;}
+  .fa-github {font-size: 19px; margin: 0;}
+  #github-repo-link {font-size: 2rem;}
+  .github-links {font-size: .4rem; padding: .5rem 0;}
   .logo {height: 80px;}
+  .flowers-text {left:1rem; font-size: .8rem;}
+  .tech-text {left: 1rem; font-size: .6rem;}
 }

@@ -14,29 +14,29 @@ function Footer() {
           </a></h1>
       </span>
       <hr className="credit-break" />
-       <span className="credits">
-        <h3 id="credit-title-right">Our GitHubs</h3>
-        <div className="credit-info">
-          <span className="github-links">
-          <a href="https://github.com/search?q=eonflower"target="_blank">
-            <i className="fab fa-github"id="github-icon"></i>
-          </a>
-          <h4>Aloe</h4>
-          </span>
-          <span className="github-links">
-          <a href="https://github.com/kirksurber1"target="_blank">
-            <i className="fab fa-github"id="github-icon"></i>
-          </a>
-          <h4>Kirk</h4>
-          </span>
-          <span className="github-links">
-          <a href="https://github.com/Mattrob10"target="_blank">
-            <i className="fab fa-github" id="github-icon"></i>
-          </a>
-          <h4>Matthew</h4>
-          </span>
-        </div>
-       </span>
+        <span className="credits">
+          <h3 id="credit-title-right">Our GitHubs</h3>
+          <div className="credit-info">
+            <span className="github-links">
+            <a href="https://github.com/search?q=eonflower"target="_blank">
+              <i className="fab fa-github"id="github-icon"></i>
+            </a>
+            <h4>Aloe</h4>
+            </span>
+            <span className="github-links">
+            <a href="https://github.com/kirksurber1"target="_blank">
+              <i className="fab fa-github"id="github-icon"></i>
+            </a>
+            <h4>Kirk</h4>
+            </span>
+            <span className="github-links">
+            <a href="https://github.com/Mattrob10"target="_blank">
+              <i className="fab fa-github" id="github-icon"></i>
+            </a>
+            <h4>Matthew</h4>
+            </span>
+          </div>
+        </span>
     </div>
   );
 }
