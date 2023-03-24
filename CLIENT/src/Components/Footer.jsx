@@ -18,7 +18,7 @@ function Footer() {
           <h3 id="credit-title-right">Our GitHubs</h3>
           <div className="credit-info">
             <span className="github-links">
-            <a href="https://github.com/search?q=eonflower"target="_blank">
+            <a href="https://github.com/eonflower/trash-cats"target="_blank">
               <i className="fab fa-github"id="github-icon"></i>
             </a>
             <h4>Aloe</h4>

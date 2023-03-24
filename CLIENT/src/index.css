@@ -261,6 +261,7 @@ color:#7E8BBA
   font-size: 2rem;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .gear-img {
