@@ -3,7 +3,7 @@ import WishlistButton from './WishlistButton';
 import { WishlistContext } from './WishlistContext';
 
 export default function WishlistCard() {
-    const { wishlist, addToWishlist, removeFromWishlist } = useContext(WishlistContext)
+    const { wishlist, removeFromWishlist } = useContext(WishlistContext)
 
     // const removeFromWishlist = (item) => {
     //     // TODO: Implement adding item to wishlist functionality
