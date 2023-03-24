@@ -1,8 +1,11 @@
 import React from "react";
 
+
+
 function Wishlist() {
   return (
-    <div className="wishlist">WISHLIST</div>
+    <div className="wishlist">
+    </div>
   )
 }
 
