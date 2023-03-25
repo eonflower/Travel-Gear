@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from 'react';
+import WishlistCard from '../Components/Cards/WishlistCard';
+import { TechGearContext } from '../Components/TechGearContext';
 
+export default function Wishlist() {
+  const { wishlist } = useContext(TechGearContext);
 
-
-function Wishlist() {
   return (
-    <div className="wishlist">
+    <>
+    <div className='wishlist'>
+    <WishlistCard />
     </div>
-  )
+      
+    </>
+  );
 }
-
-export default Wishlist;
