@@ -12,21 +12,12 @@ function WishlistContextProvider(props) {
         .catch(err => console.log(err))
     }, []);
 
-
-    const addToWishlist = (newWishlistItem) => {
-        axios.post("api/wishlist", newWishlistItem)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-    };
-
-    const removeFromWishlist = (wishlistItem) => {
-        axios.delete(`/api/wishlist/${wishlistItem}`)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
-    }
+    const handleWishlistAdd = (item) => {
+        setWishlist([...wishlist, item]);
+        };
 
     return (
-        <WishlistContext.Provider value={[ wishlist, setWishlist, addToWishlist, removeFromWishlist ]}>
+        <WishlistContext.Provider value={{ wishlist, setWishlist, handleWishlistAdd}}>
         {props.children}
         </WishlistContext.Provider>
     )

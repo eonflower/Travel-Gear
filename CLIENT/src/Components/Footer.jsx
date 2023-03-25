@@ -5,7 +5,8 @@ const year = currentDate.getFullYear();
 
 function Footer() {
   return (
-    <div className='footer'>
+    <div className="footer-wrapper">
+      <div className='footer'>
       <span className="copyrite">
         <h3 id="credit-title">Created by 
           Aloe, Kirk, & Matt &copy; {year}</h3>
@@ -37,6 +38,7 @@ function Footer() {
             </span>
           </div>
         </span>
+    </div>
     </div>
   );
 }
