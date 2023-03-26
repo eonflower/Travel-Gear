@@ -25,6 +25,8 @@ app.use("/techGear", require("./Routes/techGearRouter.js"))
 
 app.use("/photography", require("./Routes/photographyRouter.js"))
 
+app.use("/wishlist", require("./Routes/wishlistRouter.js"))
+
 
 // ERROR HANDLER
 app.use((err, req, res, next) => {

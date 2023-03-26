@@ -34,6 +34,10 @@ const photographySchema = new Schema({
     type: String,
     required: true,
   },
+  isOnWishlist: {
+    type: Boolean,
+    required: true,
+  }
 })
 
 module.exports = mongoose.model("Photography", photographySchema)
