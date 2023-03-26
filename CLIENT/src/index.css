@@ -214,6 +214,9 @@ color:#7E8BBA
   margin: .2rem;
   font-size: 1rem;
 }
+
+
+
 #tech-gear-img{
   /* height: 200px;
   width: 200px; */
@@ -293,6 +296,13 @@ color:#7E8BBA
   opacity: .7;
 
   transition: all ease-in-out .05s;
+}
+
+.read-more, .read-less {
+  padding: .8rem 0 0;
+  background: none;
+  border: none;
+  color:rgb(88, 131, 131);
 }
 
 .gear-img {
