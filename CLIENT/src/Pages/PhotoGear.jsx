@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 import PhotoCard from "../Components/Cards/PhotoCard";
+import { PhotographyContext } from "../Components/PhotographyContext";
 
 function PhotoGear() {
 
