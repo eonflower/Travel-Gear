@@ -56,9 +56,9 @@ export default function PhotoCard() {
                     <p className='item-description'>
                     {isItemExpanded(item._id)
                     ? item.description
-                    : item.description.slice(0, 150) + '...'}
+                    : item.description.slice(0, 150)}
                     {item.description.length >= 150 && (
-                        <>
+                        <>...
                         <br />
                     <button
                         className="read-more"
