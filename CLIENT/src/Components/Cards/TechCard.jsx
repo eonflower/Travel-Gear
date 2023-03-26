@@ -40,7 +40,7 @@ export default function TechCard() {
     event.preventDefault();
     axios;
     axios
-      .get(`https://techGear/search?type=${searchTechGear}`)
+      .get(`https://techGear/search?style=${searchTechGear}`)
       .then((response) => {
         setTechGear(response.data.data);
       })
@@ -68,6 +68,7 @@ export default function TechCard() {
 
   return (
     <>
+      <div className="form">
       <form onSubmit={handleSubmit}>
         <input
           type='text'
@@ -78,6 +79,8 @@ export default function TechCard() {
         />
         <button type='submit'>Search</button>
       </form>
+      </div>
+      
       {filteredTechGear.map((item) => (
         <div className='gear-page-item' key={item._id}>
           <img

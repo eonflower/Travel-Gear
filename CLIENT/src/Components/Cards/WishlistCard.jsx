@@ -9,7 +9,7 @@ export default function WishlistCard() {
     const { techWishlist , setTechWishlist} = useContext(TechGearContext);
     const { photoWishlist, setPhotoWishlist } = useContext(PhotographyContext);
 
-    const trash = <i class="fa-solid fa-trash"></i>
+    const trash = <i className="fa-solid fa-trash"></i>
 
     const deleteTechItem = (itemId) => {
         axios.delete(`/api/wishlist/${itemId}`)
@@ -25,6 +25,10 @@ export default function WishlistCard() {
 
     return (
         <>
+          {techWishlist.length === 0 && photoWishlist.length === 0 && (
+                <div className="no-items">Currently no items added to Wishlist</div>
+            )}
+
         {techWishlist.map((item) => (
     <div className="wishlist-item" key={item._id}>
     <img className="gear-img" src={item.imgURL} alt={item.title} id='tech-gear-img' />
