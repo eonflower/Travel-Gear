@@ -1,15 +1,14 @@
 import React, { useContext, useState } from 'react';
+import axios from "axios"
 import { TechGearContext } from '../TechGearContext';
 
 export default function TechCard() {
-    const { techGear, handleAddToWishlist, setMessage } = useContext(TechGearContext);
-    const [liked, setLiked] = useState(false)
+    const { techGear, setTechGear, handleAddToWishlist, setLiked, liked} = useContext(TechGearContext);
     const outlinedHeart = <i class="fa-regular fa-heart" style={{color: "#7E8BBA"}}></i>
     const filledHeart = <i class="fa-solid fa-heart" style={{color: "#7E8BBA"}}></i>
     const [wishlist, setWishlist] = useState([]);
 
     const handleWishlist = (techGear) => {
-        setMessage(`${techGear.name} added to your favorites!`);
         handleAddToWishlist(techGear);
         setWishlist((prevWishlist) => [...prevWishlist, techGear]);
     };
@@ -30,8 +29,8 @@ export default function TechCard() {
             </h3>
             <h4 className='item-size'>Capacity: {item.capacity}L</h4>
             <p>{item.description}</p>
-            <button className='add-to-wishlist' onClick={() => handleWishlist(item)}>
-            {isItemInWishlist(item._id) ?  filledHeart : outlinedHeart}
+            <button className='add-to-wishlist' onClick={() => {handleWishlist(item)}}>
+            {isItemInWishlist(item._id) ? filledHeart : outlinedHeart}
             </button>
             </div>
         ))}

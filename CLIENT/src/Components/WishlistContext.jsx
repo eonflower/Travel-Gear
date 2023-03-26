@@ -17,7 +17,7 @@ function WishlistContextProvider(props) {
         };
 
     return (
-        <WishlistContext.Provider value={{ wishlist, setWishlist, handleWishlistAdd}}>
+        <WishlistContext.Provider value={{ wishlist, setWishlist}}>
         {props.children}
         </WishlistContext.Provider>
     )

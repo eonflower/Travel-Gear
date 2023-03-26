@@ -2,14 +2,12 @@ import React, { useContext, useState } from 'react';
 import { PhotographyContext } from '../PhotographyContext';
 
 export default function PhotoCard() {
-    const { photoGear, handleAddToWishlist, setMessage } = useContext(PhotographyContext);
-    const [liked, setLiked] = useState(false)
+    const { photoGear, handleAddToWishlist} = useContext(PhotographyContext);
     const outlinedHeart = <i class="fa-regular fa-heart" style={{color: "#7E8BBA"}}></i>
     const filledHeart = <i class="fa-solid fa-heart" style={{color: "#7E8BBA"}}></i>
     const [wishlist, setWishlist] = useState([]);
 
     const handleWishlist = (techGear) => {
-        setMessage(`${techGear.name} added to your favorites!`);
         handleAddToWishlist(techGear);
         setWishlist((prevWishlist) => [...prevWishlist, techGear]);
     };
@@ -17,6 +15,7 @@ export default function PhotoCard() {
     const isItemInWishlist = (itemId) => {
         return wishlist.some((item) => item._id === itemId);
     };
+
     return (
         <>
         {photoGear.map((item) => (
@@ -30,10 +29,10 @@ export default function PhotoCard() {
             <h4 className='item-size'>Capacity: {item.capacity}L</h4>
             <p>{item.description}</p>
             <button className='add-to-wishlist' onClick={() => handleWishlist(item)}>
-                {isItemInWishlist(item._id) ? filledHeart : outlinedHeart}
+                {isItemInWishlist(item._id) === true ? filledHeart : outlinedHeart}
             </button>
             </div>
         ))}
         </>
-    );
+    ); 
 }
