@@ -28,7 +28,8 @@ function TechGearContextProvider(props) {
   const handleAddToWishlist = (item) => {
     axios.post('/api/wishlist', item)
       .then(res => setTechWishlist(prevList => [...prevList, item]))
-      .catch(err => console.log(err));
+      .catch(err => alert("Item is in wishlist"));
+      
   };
 
   // const updateItem = (updates, itemId) => {

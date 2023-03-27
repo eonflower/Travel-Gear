@@ -1,15 +1,16 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { TechGearContext } from "../TechGearContext";
+import {Link} from "react-router-dom"
 
 export default function TechCard() {
   const { techGear, setTechGear, handleAddToWishlist, setLiked, liked } =
     useContext(TechGearContext);
   const outlinedHeart = (
-    <i class='fa-regular fa-heart' style={{ color: "#7E8BBA" }}></i>
+    <i className='fa-regular fa-heart' style={{ color: "#7E8BBA" }}></i>
   );
   const filledHeart = (
-    <i class='fa-solid fa-heart' style={{ color: "#7E8BBA" }}></i>
+    <i className='fa-solid fa-heart' style={{ color: "#7E8BBA" }}></i>
   );
   const [wishlist, setWishlist] = useState([]);
   const [expandedItems, setExpandedItems] = useState([]);
@@ -38,57 +39,60 @@ export default function TechCard() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios;
     axios
-      .get(`https://techGear/search?style=${searchTechGear}`)
+      .get(`https://techGear/search?type=${searchTechGear}`)
       .then((response) => {
         setTechGear(response.data.data);
       })
       .catch((error) => console.log(error));
   };
-
+  
   const handleInputChange = (event) => {
-    const capitalizedSearchTerm = event.target.value.charAt(0).toUpperCase() + event.target.value.slice(1).toLowerCase();
-    setSearchTechGear(capitalizedSearchTerm);
+    setSearchTechGear(event.target.value);
   };
   
   const filteredTechGear = searchTechGear
-  ? techGear.filter(
-      (item) =>
-        item.name
-          ?.toString()
-          .toLowerCase()
-          .includes(searchTechGear.toLowerCase()) ||
-        item.type
-          ?.toString()
-          .toLowerCase()
-          .includes(searchTechGear.toLowerCase())
-    )
-  : techGear;
+    ? techGear.filter(
+        (item) =>
+          item.name
+            ?.toString()
+            .toLowerCase()
+            .includes(searchTechGear.toLowerCase())
+      )
+    : techGear;
+  
 
   return (
     <>
       <div className="form">
       <form onSubmit={handleSubmit}>
-        <input
-          type='text'
+        <select
           name='search'
           placeholder='Search tech gear'
           value={searchTechGear}
-          onChange={handleInputChange}
-        />
+          onChange={handleInputChange}>
+            <option value=''>-- Choose Type of Tech Gear--</option>
+            <option value=''>Get All Tech Gear</option>
+            <option value='pack'>Backpack</option>
+            <option value='Briefcase'>Briefcase</option>
+            <option value='Messenger'>Messenger</option>
+            <option value='Sleeve'>Sleeve</option>
+            <option value='pouch'>Accessories</option>
+          </select>
         <button type='submit'>Search</button>
       </form>
       </div>
       
       {filteredTechGear.map((item) => (
         <div className='gear-page-item' key={item._id}>
+          <Link to={`/techGear/${item._id}`}>
           <img
             className='gear-img'
             src={item.imgURL}
             alt={item.title}
             id='tech-gear-img'
           />
+          </Link>
           <h2 className='item-brand'>{item.brand}</h2>
           <h3 className='item-name'>{item.name}</h3>
           <h3 className='item-type'>

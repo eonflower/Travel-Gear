@@ -6,6 +6,8 @@ import TechGear from "./Pages/TechGear"; // imports the TechGear component
 import Wishlist from "./Pages/WishList"; // imports the Wishlist component
 import PhotoGear from "./Pages/PhotoGear"; // imports the PhotoGear component
 import Footer from "./Components/Footer"; // imports the Footer component
+import TechGearDetails  from "./Pages/TechGearDetails";
+import PhotographyDetails from "./Pages/PhotographyDetails";
 
 function App() {
   return (
@@ -16,9 +18,10 @@ function App() {
           <Route path='/techGear' exact element={<TechGear />} />
           <Route path='/photography' exact element={<PhotoGear />} />
           <Route path='/wishlist' exact element={<Wishlist />} />
+          <Route path='/techGear/:id' exact element={<TechGearDetails />} />
+          <Route path='/photography/:id' exact element={<PhotographyDetails />} />
         </Routes>
       <Footer/>
-      
     </div>
   )
 }
