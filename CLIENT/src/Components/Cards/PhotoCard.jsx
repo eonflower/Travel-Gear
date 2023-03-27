@@ -4,13 +4,13 @@ import axios from "axios"
 import {Link} from "react-router-dom"
 
 export default function PhotoCard() {
-    const { photoGear, setPhotoGear, photoWishlist, setPhotoWishlist, handleAddToWishlist} = useContext(PhotographyContext);
+    const { photoGear, setPhotoGear, handleAddToWishlist} = useContext(PhotographyContext);
     const outlinedHeart = <i className="fa-regular fa-heart" style={{color: "#7E8BBA"}}></i>
     const filledHeart = <i className="fa-solid fa-heart" style={{color: "#7E8BBA"}}></i>
     const [wishlist, setWishlist] = useState([]);
     const [expandedItems, setExpandedItems] = useState([]);
-    const [likedItem, setLikedItem] = useState([])
-    const [liked, setLiked] = useState(false)
+    // const [likedItem, setLikedItem] = useState([])
+    // const [liked, setLiked] = useState(false)
     const [searchPhotoGear, setSearchPhotoGear] = useState("");
 
     const handleWishlist = (photoGear) => {
@@ -45,7 +45,7 @@ export default function PhotoCard() {
       const filteredPhotoGear = searchPhotoGear
         ? photoGear.filter(
             (item) =>
-              item.name
+              item.category
                 ?.toString()
                 .toLowerCase()
                 .includes(searchPhotoGear.toLowerCase())
@@ -79,12 +79,10 @@ export default function PhotoCard() {
             <option value=''>-- Choose Type of Photography Gear--</option>
             <option value=''>Get All Photography Gear</option>
             <option value='Camera'>Camera</option>
-            <option value='Digital Camera'>Digital Camera</option>
-            <option value='Mirrorless Camera with 12-60mm Lens'>Mirrorless Camera with 12-60mm Lens</option>
-            <option value='Shoulder Bag'>Shoulder Bag</option>
-            <option value='Mirrorless Mover 20'>Mirrorless Mover 20</option>
-            <option value='Hard Utility Case'>Hard Utility Case</option>
-            <option value='Sling Bag'>Sling Bag</option>
+            <option value='Bag'>Bags</option>
+            <option value='Lenses'>Lenses</option>
+            <option value='Accessories'>Accessories</option>
+            {/* <option value='Sling Bag'>Sling Bag</option>
             <option value='Rolling Bag'>Rolling Bag</option>
             <option value='Contemporary Lens for Sony E'>Contemporary Lens for Sony E</option>
             <option value='Lens for Sony E'>Lens for Sony E</option>
@@ -92,7 +90,7 @@ export default function PhotoCard() {
             <option value='Memory Card'>Memory Card</option>
             <option value='Memory Card Case'>Memory Card Case</option>
             <option value='Filter Kit'>Filter Kit</option>
-            <option value='Wireless Remote Control'>Wireless Remote Control</option>
+            <option value='Wireless Remote Control'>Wireless Remote Control</option> */}
           </select>
         <button type='submit'>Search</button>
       </form>
