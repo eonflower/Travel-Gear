@@ -15,6 +15,7 @@ techGearRouter.get("/", async (req, res, next) => {
 });
 // GET by ID
 techGearRouter.get("/:id", async (req, res, next) => {
+  console.log(req.params.id)
   try {
     const techGearItem = await TechGear.findById(req.params.id);
     if (!techGearItem) {
@@ -26,6 +27,7 @@ techGearRouter.get("/:id", async (req, res, next) => {
     return next(err);
   }
 });
+
 
 //Post 
 techGearRouter.post("/", (req, res, next) => {
