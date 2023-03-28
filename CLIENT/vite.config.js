@@ -12,6 +12,5 @@ export default defineConfig({
       },
     }
   },
-  plugins: [react()],
-  base: "/vite-deploy/"
+  plugins: [react()]
 })
