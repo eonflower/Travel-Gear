@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from "axios"
 import { TechGearContext } from '../TechGearContext';
 import { PhotographyContext } from '../PhotographyContext';
+import {Link} from "react-router-dom"
 
 export default function WishlistCard() {
     const { techWishlist , setTechWishlist} = useContext(TechGearContext);
@@ -29,7 +30,9 @@ export default function WishlistCard() {
 
         {techWishlist.map((item) => (
     <div className="wishlist-item" key={item._id}>
+    <Link to={`/photography/${item._id}`}>
     <img className="gear-img" src={item.imgURL} alt={item.title} id='tech-gear-img' />
+    </Link>
     <h2 className="item-brand">{item.brand}</h2>
     <h3 className="item-name">{item.name}</h3>
     <h3 className="item-type">
@@ -43,7 +46,9 @@ export default function WishlistCard() {
 
 {photoWishlist.map((item) => (
     <div className="wishlist-item" key={item._id}>
+    <Link to={`/photography/${item._id}`}>
     <img className="gear-img" src={item.imgURL} alt={item.title} id='tech-gear-img' />
+    </Link>
     <h2 className="item-brand">{item.brand}</h2>
     <h3 className="item-name">{item.name}</h3>
     <h3 className="item-type">

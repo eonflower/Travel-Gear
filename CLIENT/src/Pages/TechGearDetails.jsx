@@ -18,22 +18,25 @@ function TechGearDetails() {
   }, []);
 
   return (
-    <div>
+    <div className='techgear'>
+      <div className='item-wrapper'>
       {item ? (
         <>
+          <img id="tech-gear-img" src={item.imgURL} alt={item.title} />
           <h2 className='item-brand'>{item.brand}</h2>
           <h3 className='item-name'>{item.name}</h3>
           <h3 className='item-type'>
             Type: {item.style} | ${item.price}
           <h4 className='item-size'>Capacity: {item.capacity}L</h4>  
           </h3>
-          <img src={item.imgURL} alt={item.title} />
+          
           <p className='item-description'>{item.description}</p>
           
         </>
       ) : (
         <p>Loading...</p>
       )}
+      </div>
     </div>
   );
 }
