@@ -17,20 +17,24 @@ function PhotographyDetails()  {
   }, [])
 
   return (
-    <div>
+    <div className='photogear'>
+      <div className='item-wrapper'>
       {item ? (
         <>
-          <h2>{item.brand}</h2>
-          <h2>{item.name}</h2>
-          <img src={item.imgURL} alt={item.title} />
-          <p>{item.description}</p>
-          <p>{item.capacity}</p>
-          <p>{item.price}</p>
+          <img id='photo-gear-img' src={item.imgURL} alt={item.title} />
+          <h2 className='item-brand'>{item.brand}</h2>
+          <h3 className='item-name'>{item.name}</h3>
+          <h3 className='item-type'>
+          {item.style} | ${item.price}
+          </h3>
+          <h4 className='item-size'>{item.size}</h4>
+          <p className='item-description'>{item.description}</p>
          {/* add more item properties as needed you have a TON on your API 👏 */}
         </>
       ) : (
         <p>Loading...</p>
       )}
+      </div>
     </div>
   );
 }

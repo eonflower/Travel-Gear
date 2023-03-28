@@ -1,61 +1,3 @@
-// import React, { useContext, useState } from 'react';
-// import { PhotographyContext } from '../PhotographyContext';
-// import {Link} from "react-router-dom"
-
-// export default function PhotoCard(props) {
-//     const { photoGear} = useContext(PhotographyContext);
-//     const outlinedHeart = <i className="fa-regular fa-heart" style={{color: "#7E8BBA"}}></i>
-//     const filledHeart = <i className="fa-solid fa-heart" style={{color: "#7E8BBA"}}></i>
-//     const [searchPhotoGear] = useState("");
-
-//       const filteredPhotoGear = searchPhotoGear
-//         ? photoGear.filter(
-//             (item) =>
-//               item.category
-//                 ?.toString()
-//                 .toLowerCase()
-//                 .includes(searchPhotoGear.toLowerCase())
-//           )
-//         : photoGear;
-
-//     return (
-//         <>
-//         {photoGear.map((item) => (
-//         <div className='gear-page-item' key={item._id}>
-//             <Link to={`/photography/${item._id}`}>
-//             <img className='gear-img' src={item.imgURL} alt={item.title} id='photo-gear-img' />
-//             </Link>
-//             <h2 className='item-brand'>{item.brand}</h2>
-//             <h3 className='item-name'>{item.name}</h3>
-//             <h3 className='item-type'>
-//             {item.style} | ${item.price}
-//             </h3>
-//             <h4 className='item-size'>{item.size}</h4>
-//             <p className='item-description'>
-//             {props.isItemExpanded(item._id)
-//             ? item.description
-//             : item.description.slice(0, 150)}
-//             {item.description.length > 150 && (
-//                 <>{props.isItemExpanded(item._id) ? "" : "..."}
-//                 <br />
-//             <button
-//                 className="read-more"
-//                 onClick={() => props.toggleExpandedItem(item._id)}
-//             >
-//                 {props.isItemExpanded(item._id) ? 'read less' : 'read more'}
-//             </button></>
-//             )}
-//             </p>
-//             <button className='add-to-wishlist' onClick={() => {props.handleWishlist(item)}}>
-//                 {props.isItemInWishlist(item._id) ? filledHeart : outlinedHeart}
-//             </button>
-//         </div>
-//             ))}
-//         </>
-//     ); 
-// }
-
-
 
 import React, { useContext, useState } from 'react';
 import { PhotographyContext } from '../PhotographyContext';
@@ -68,8 +10,6 @@ export default function PhotoCard() {
     const filledHeart = <i className="fa-solid fa-heart" style={{color: "#7E8BBA"}}></i>
     const [wishlist, setWishlist] = useState([]);
     const [expandedItems, setExpandedItems] = useState([]);
-    // const [likedItem, setLikedItem] = useState([])
-    // const [liked, setLiked] = useState(false)
     const [searchPhotoGear, setSearchPhotoGear] = useState("");
 
     const handleWishlist = (photoGear) => {
@@ -77,25 +17,19 @@ export default function PhotoCard() {
         setWishlist((prevWishlist) => [...prevWishlist, photoGear])
     };
 
-    // const deletePhotoItem = (itemId) => {
-    //     axios.delete(`/api/wishlist/${itemId}`)
-    //     .then(res => setPhotoWishlist(prevList => prevList.filter(item => item._id !== itemId)))
-    //     .catch(err => console.log(err))
-    // }
-
     const isItemInWishlist = (itemId) => {
         return wishlist.some((item) => item._id === itemId);
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        axios
-          .get(`https://photography/search?type=${searchPhotoGear}`)
-          .then((response) => {
-            setPhotoGear(response.data.data);
-          })
-          .catch((error) => console.log(error));
-      };
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     axios
+    //       .get(`https://photography/search?type=${searchPhotoGear}`)
+    //       .then((response) => {
+    //         setPhotoGear(response.data.data);
+    //       })
+    //       .catch((error) => console.log(error));
+    //   };
       
       const handleInputChange = (event) => {
         setSearchPhotoGear(event.target.value);

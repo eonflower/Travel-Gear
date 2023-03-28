@@ -65,6 +65,10 @@ body {
   margin: 10px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .home-link:hover, .tech-gear-link:hover, .photo-gear-link:hover, .wishlist-link:hover {
   background-color: #f0f9f8;
 } 
@@ -221,9 +225,11 @@ color:#7E8BBA
 
 
 
-#tech-gear-img{
+#tech-gear-img, #photo-gear-img{
   /* height: 200px;
   width: 200px; */
+  display: flex;
+  justify-content: center;
   object-fit: contain;
   margin: auto;
 }
@@ -270,6 +276,17 @@ color:#7E8BBA
 .gear-page-item {
   position: relative;
   width: 350px;
+  height: auto;
+  padding: 1rem;
+  box-shadow: 0px 0px 5px rgb(168, 167, 167);
+
+  transition: all ease-in-out .2s;
+}
+
+.item-wrapper {
+  position: relative;
+  margin: auto;
+  width: 500px;
   height: auto;
   padding: 1rem;
   box-shadow: 0px 0px 5px rgb(168, 167, 167);
@@ -426,6 +443,7 @@ color:#7E8BBA
   .item-brand {font-size: 1.8rem;}
   .item-name {font-size: 1.2rem;}
   .item-type, .item-size {font-size: .9rem;}
+  .tagline-text {font-size: 2rem;}
   #github-repo-link {margin-top: 10px;}
   .camera {
     background-position: 50% 80%;
@@ -442,17 +460,18 @@ color:#7E8BBA
   .item-brand {font-size: 1.5rem;}
   .item-name {font-size: 1rem;}
   .item-type, .item-size {font-size: .8rem;}
+  .tagline-text {font-size: 1.5rem;}
   #github-repo-link {margin-top: 10px;}
 }
 
 @media screen and (max-width: 1000px) {
-  .flowers { background-size:auto; background-position: center bottom 10%;}
+  .flowers { background-size: 100%; background-position: center bottom 100%;}
   .camera, .tech {background-position: center 0%;}
 }
 
 @media screen and (max-width: 800px) {
   .select-list {font-size: .8rem;}
-  .flowers {background-size: 200%; background-position: center bottom 10%;}
+  .flowers {background-size: 150%; background-position: center bottom 150%;}
   .tech {background-size: 150%; background-position: 20% 0%;}
   p {font-size: .8rem;}
   .wishlist-item {width: 280px; height: 280px;}
@@ -468,7 +487,7 @@ color:#7E8BBA
 
 @media screen and (max-width: 680px) {
   .select-list {font-size: .7rem;}
-  .flowers {background-position: center 200%; height: 200px;}
+  .flowers {background-position: center -80%; height: 200px;}
   .camera, .tech {height: 200px;}
   .tech {background-size: 180%; background-position: 20% -70%;}
   p {font-size: .7rem;}
@@ -504,6 +523,7 @@ color:#7E8BBA
   .item-brand {font-size: 1rem;}
   .item-name {font-size: .75rem;}
   .item-type, .item-size {font-size: .65rem;}
+  .tagline-text {font-size: 1.2rem;}
   .home-link, .tech-gear-link, .photo-gear-link, .wishlist-link {font-size: .5rem;}
   #credit-title, #credit-title-right {font-size: .5rem; padding-bottom: 1rem;}
   .github-links, .github-master {height: 45px; width: 45px;}
