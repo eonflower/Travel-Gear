@@ -19,8 +19,10 @@ function TechGearDetails() {
 
   return (
     <div className='techgear'>
+           <a href="/techGear" className="back-button"><i className="fa-solid fa-square-caret-left"></i></a>
+
       <div className='item-wrapper'>
-      {item ? (
+       {item ? (
         <>
           <img id="tech-gear-img" src={item.imgURL} alt={item.title} />
           <h2 className='item-brand'>{item.brand}</h2>

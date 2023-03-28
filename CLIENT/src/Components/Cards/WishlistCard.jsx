@@ -3,7 +3,7 @@ import axios from "axios"
 import { TechGearContext } from '../TechGearContext';
 import { PhotographyContext } from '../PhotographyContext';
 import {Link} from "react-router-dom"
-
+import noItem from "/src/assets/no-items.png"
 export default function WishlistCard() {
     const { techWishlist , setTechWishlist} = useContext(TechGearContext);
     const { photoWishlist, setPhotoWishlist } = useContext(PhotographyContext);
@@ -25,7 +25,9 @@ export default function WishlistCard() {
     return (
         <>
             {techWishlist.length === 0 && photoWishlist.length === 0 && (
-                <div className="no-items">Currently no items added to Wishlist</div>
+                <div className="no-items">
+                    <img src={noItem} alt="no-items" id='no-items-img'></img>
+                </div>
             )}
 
         {techWishlist.map((item) => (

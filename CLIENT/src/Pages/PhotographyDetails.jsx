@@ -17,8 +17,11 @@ function PhotographyDetails()  {
   }, [])
 
   return (
+    
     <div className='photogear'>
+      <a href="/photography" className="back-button"><i className="fa-solid fa-square-caret-left"></i></a>
       <div className='item-wrapper'>
+    
       {item ? (
         <>
           <img id='photo-gear-img' src={item.imgURL} alt={item.title} />
