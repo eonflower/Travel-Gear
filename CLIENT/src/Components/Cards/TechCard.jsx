@@ -1,3 +1,73 @@
+// import React, { useContext, useState } from "react";
+// import { TechGearContext } from "../TechGearContext";
+// import {Link} from "react-router-dom"
+
+// export default function TechCard(props) {
+//   const { techGear} = useContext(TechGearContext);
+//   const outlinedHeart = <i className="fa-regular fa-heart" style={{color: "#7E8BBA"}}></i>
+//   const filledHeart = <i className="fa-solid fa-heart" style={{color: "#7E8BBA"}}></i>
+//   const [searchTechGear] = useState("");
+
+//   const filteredTechGear = searchTechGear
+//     ? techGear.filter(
+//         (item) =>
+//           item.name
+//             ?.toString()
+//             .toLowerCase()
+//             .includes(searchTechGear.toLowerCase())
+//       )
+//     : techGear;
+  
+//   return (
+//     <>
+//       {filteredTechGear.map((item) => (
+//         <div className='gear-page-item' key={item._id}>
+//           <Link to={`/techGear/${item._id}`}>
+//           <img
+//             className='gear-img'
+//             src={item.imgURL}
+//             alt={item.title}
+//             id='tech-gear-img'
+//           />
+//           </Link>
+//           <h2 className='item-brand'>{item.brand}</h2>
+//           <h3 className='item-name'>{item.name}</h3>
+//           <h3 className='item-type'>
+//             Type: {item.style} | ${item.price}
+//           </h3>
+//           <h4 className='item-size'>Capacity: {item.capacity}L</h4>
+//           <p className='item-description'>
+//             {props.isItemExpanded(item._id)
+//               ? item.description
+//               : item.description.slice(0, 150)}
+//             {item.description.length > 150 && (
+//               <>
+//                 {props.isItemExpanded(item._id) ? "" : "..."}
+//                 <br />
+//                 <button
+//                   className='read-more'
+//                   onClick={() => props.toggleExpandedItem(item._id)}
+//                 >
+//                   {props.isItemExpanded(item._id) ? "read less" : "read more"}
+//                 </button>
+//               </>
+//             )}
+//           </p>
+//           <button
+//             className='add-to-wishlist'
+//             onClick={() => {
+//               props.handleWishlist(item);
+//             }}
+//           >
+//             {props.isItemInWishlist(item._id) ? filledHeart : outlinedHeart}
+//           </button>
+//         </div>
+//       ))}
+//     </>
+//   );
+// }
+
+
 import React, { useContext, useState } from "react";
 import axios from "axios";
 import { TechGearContext } from "../TechGearContext";
@@ -65,24 +135,22 @@ export default function TechCard() {
   return (
     <>
       <div className="form">
-      <form onSubmit={handleSubmit}>
         <select
+          className='select-list'
           name='search'
           placeholder='Search tech gear'
           value={searchTechGear}
           onChange={handleInputChange}>
-            <option value=''>-- Choose Type of Tech Gear--</option>
-            <option value=''>Get All Tech Gear</option>
+            <option value=''>Choose Type of Gear</option>
+            <option value=''>All Gear</option>
             <option value='pack'>Backpack</option>
             <option value='Briefcase'>Briefcase</option>
             <option value='Messenger'>Messenger</option>
             <option value='Sleeve'>Sleeve</option>
             <option value='pouch'>Accessories</option>
           </select>
-        <button type='submit'>Search</button>
-      </form>
       </div>
-      
+      <div className='techgear-list'>
       {filteredTechGear.map((item) => (
         <div className='gear-page-item' key={item._id}>
           <Link to={`/techGear/${item._id}`}>
@@ -116,16 +184,11 @@ export default function TechCard() {
               </>
             )}
           </p>
-          <button
-            className='add-to-wishlist'
-            onClick={() => {
-              handleWishlist(item);
-            }}
-          >
-            {isItemInWishlist(item._id) ? filledHeart : outlinedHeart}
-          </button>
+          <button className='add-to-wishlist' onClick={() => {handleWishlist(item)}}>
+                {isItemInWishlist(item._id) ? filledHeart : outlinedHeart} </button>
         </div>
       ))}
+      </div>
     </>
   );
 }

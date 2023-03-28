@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from "axios"
-// import WishlistButton from './WishlistButton';
-import { WishlistContext } from '../WishlistContext';
 import { TechGearContext } from '../TechGearContext';
 import { PhotographyContext } from '../PhotographyContext';
 
@@ -25,7 +23,7 @@ export default function WishlistCard() {
 
     return (
         <>
-          {techWishlist.length === 0 && photoWishlist.length === 0 && (
+            {techWishlist.length === 0 && photoWishlist.length === 0 && (
                 <div className="no-items">Currently no items added to Wishlist</div>
             )}
 

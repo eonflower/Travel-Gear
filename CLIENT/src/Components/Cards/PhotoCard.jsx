@@ -1,3 +1,62 @@
+// import React, { useContext, useState } from 'react';
+// import { PhotographyContext } from '../PhotographyContext';
+// import {Link} from "react-router-dom"
+
+// export default function PhotoCard(props) {
+//     const { photoGear} = useContext(PhotographyContext);
+//     const outlinedHeart = <i className="fa-regular fa-heart" style={{color: "#7E8BBA"}}></i>
+//     const filledHeart = <i className="fa-solid fa-heart" style={{color: "#7E8BBA"}}></i>
+//     const [searchPhotoGear] = useState("");
+
+//       const filteredPhotoGear = searchPhotoGear
+//         ? photoGear.filter(
+//             (item) =>
+//               item.category
+//                 ?.toString()
+//                 .toLowerCase()
+//                 .includes(searchPhotoGear.toLowerCase())
+//           )
+//         : photoGear;
+
+//     return (
+//         <>
+//         {photoGear.map((item) => (
+//         <div className='gear-page-item' key={item._id}>
+//             <Link to={`/photography/${item._id}`}>
+//             <img className='gear-img' src={item.imgURL} alt={item.title} id='photo-gear-img' />
+//             </Link>
+//             <h2 className='item-brand'>{item.brand}</h2>
+//             <h3 className='item-name'>{item.name}</h3>
+//             <h3 className='item-type'>
+//             {item.style} | ${item.price}
+//             </h3>
+//             <h4 className='item-size'>{item.size}</h4>
+//             <p className='item-description'>
+//             {props.isItemExpanded(item._id)
+//             ? item.description
+//             : item.description.slice(0, 150)}
+//             {item.description.length > 150 && (
+//                 <>{props.isItemExpanded(item._id) ? "" : "..."}
+//                 <br />
+//             <button
+//                 className="read-more"
+//                 onClick={() => props.toggleExpandedItem(item._id)}
+//             >
+//                 {props.isItemExpanded(item._id) ? 'read less' : 'read more'}
+//             </button></>
+//             )}
+//             </p>
+//             <button className='add-to-wishlist' onClick={() => {props.handleWishlist(item)}}>
+//                 {props.isItemInWishlist(item._id) ? filledHeart : outlinedHeart}
+//             </button>
+//         </div>
+//             ))}
+//         </>
+//     ); 
+// }
+
+
+
 import React, { useContext, useState } from 'react';
 import { PhotographyContext } from '../PhotographyContext';
 import axios from "axios"
@@ -70,63 +129,53 @@ export default function PhotoCard() {
     return (
         <>
     <div className="form">
-      <form onSubmit={handleSubmit}>
         <select
+          className='select-list'
           name='search'
           placeholder='Search photo gear'
           value={searchPhotoGear}
           onChange={handleInputChange}>
-            <option value=''>-- Choose Type of Photography Gear--</option>
-            <option value=''>Get All Photography Gear</option>
+            <option value=''>Choose Type of Gear</option>
+            <option value=''>All Gear</option>
             <option value='Camera'>Camera</option>
             <option value='Bag'>Bags</option>
             <option value='Lenses'>Lenses</option>
             <option value='Accessories'>Accessories</option>
-            {/* <option value='Sling Bag'>Sling Bag</option>
-            <option value='Rolling Bag'>Rolling Bag</option>
-            <option value='Contemporary Lens for Sony E'>Contemporary Lens for Sony E</option>
-            <option value='Lens for Sony E'>Lens for Sony E</option>
-            <option value='Canon EF-M'>Canon EF-M</option>
-            <option value='Memory Card'>Memory Card</option>
-            <option value='Memory Card Case'>Memory Card Case</option>
-            <option value='Filter Kit'>Filter Kit</option>
-            <option value='Wireless Remote Control'>Wireless Remote Control</option> */}
           </select>
-        <button type='submit'>Search</button>
-      </form>
       </div>
-            {filteredPhotoGear.map((item) => (
-                <div className='gear-page-item' key={item._id}>
-                    <Link to={`/photography/${item._id}`}>
-                    <img className='gear-img' src={item.imgURL} alt={item.title} id='photo-gear-img' />
-                    </Link>
-                    <h2 className='item-brand'>{item.brand}</h2>
-                    <h3 className='item-name'>{item.name}</h3>
-                    <h3 className='item-type'>
-                    {item.style} | ${item.price}
-                    </h3>
-                    <h4 className='item-size'>{item.size}</h4>
-                    <p className='item-description'>
-                    {isItemExpanded(item._id)
-                    ? item.description
-                    : item.description.slice(0, 150)}
-                    {item.description.length > 150 && (
-                        <>{isItemExpanded(item._id) ? "" : "..."}
-                        <br />
-                    <button
-                        className="read-more"
-                        onClick={() => toggleExpandedItem(item._id)}
-                    >
-                        {isItemExpanded(item._id) ? 'read less' : 'read more'}
-                    </button></>
-                    )}
-                    </p>
-                    <button className='add-to-wishlist' onClick={() => {handleWishlist(item)}}>
-                        {isItemInWishlist(item._id) ? filledHeart : outlinedHeart}
-                    </button>
-                </div>
-            ))}
+      <div className='photogear-list'>
+      {filteredPhotoGear.map((item) => (
+          <div className='gear-page-item' key={item._id}>
+            <Link to={`/photography/${item._id}`}>
+            <img className='gear-img' src={item.imgURL} alt={item.title} id='photo-gear-img' />
+            </Link>
+            <h2 className='item-brand'>{item.brand}</h2>
+            <h3 className='item-name'>{item.name}</h3>
+            <h3 className='item-type'>
+            {item.style} | ${item.price}
+            </h3>
+            <h4 className='item-size'>{item.size}</h4>
+            <p className='item-description'>
+            {isItemExpanded(item._id)
+            ? item.description
+            : item.description.slice(0, 150)}
+            {item.description.length > 150 && (
+                <>{isItemExpanded(item._id) ? "" : "..."}
+                <br />
+            <button
+                className="read-more"
+                onClick={() => toggleExpandedItem(item._id)}
+            >
+                {isItemExpanded(item._id) ? 'read less' : 'read more'}
+            </button></>
+            )}
+            </p>
+            <button className='add-to-wishlist' onClick={() => {handleWishlist(item)}}>
+                {isItemInWishlist(item._id) ? filledHeart : outlinedHeart}
+            </button>
+          </div>
+      ))}
+      </div>
         </>
     ); 
 }
-
