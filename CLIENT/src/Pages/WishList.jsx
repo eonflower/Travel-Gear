@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from 'react';
+import WishlistCard from '../Components/Cards/WishlistCard';
 
-function Wishlist() {
+export default function Wishlist() {
   return (
-    <div className="wishlist">WISHLIST</div>
-  )
+    <>
+    <div className='wishlist'>
+    <WishlistCard />
+    </div>
+      
+    </>
+  );
 }
-
-export default Wishlist;

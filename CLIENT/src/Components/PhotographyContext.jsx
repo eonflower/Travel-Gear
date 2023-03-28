@@ -5,17 +5,30 @@ const PhotographyContext = React.createContext();
 
 function PhotographyContextProvider(props) {
   const [photoGear, setPhotoGear] = useState([]);
+  const [photoWishlist, setPhotoWishlist] = useState([]);
+  const [liked, setLiked] = useState(false)
 
   useEffect(() => {
     axios.get('/api/photography')
       .then(res => setPhotoGear(res.data))
       .catch(err => console.log(err))
+
+      axios.get('/api/wishlist')
+      .then(res => setPhotoWishlist(res.data))
+      .catch(err => console.log(err))
   }, []);
 
+  const handleAddToWishlist = (item) => {
+    axios.post('/api/wishlist', item)
+      .then(res => setPhotoWishlist(prevList => [...prevList, item]))
+      .catch(err => console.log(err));
+  };
+
+
   return (
-   <PhotographyContext.Provider value={{ photoGear}}>
-    {props.children}
-   </PhotographyContext.Provider>
+    <PhotographyContext.Provider value={{ photoGear, photoWishlist, setPhotoWishlist, handleAddToWishlist, liked, setLiked}}>
+      {props.children}
+    </PhotographyContext.Provider>
   )
 }
 

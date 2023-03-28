@@ -1,28 +1,44 @@
+// import React, { useContext } from "react";
+// import TechCard from "../Components/Cards/TechCard";
+// import TechSearch from "../Components/TechSearch";
+
+
+
+// function TechGear() {
+//   return (
+//     <>
+//     <div className="header-photo">
+//     <div className="tech">
+//     <h2 className="tech-text">Gear that works as hard as you do - built to last, ready for anything</h2>
+//     </div>
+//     </div>
+//     <div className='techgear'>
+//       <TechSearch />
+//     </div>
+//     </>
+//   );
+// }
+
+// export default TechGear;
+
+
 import React, { useContext } from "react";
-import { TechGearContext } from "../Components/TechGearContext";
+import TechCard from "../Components/Cards/TechCard";
+
 
 
 function TechGear() {
-  const { techGear } = useContext(TechGearContext);
-  console.log(techGear);
- 
-
   return (
-    <div className='techgear'>
-      {techGear.map((item) => (
-        <div key={item._id}>
-          <h2>{item.brand}</h2>
-          <h3>{item.name}</h3>
-          <h3>
-            Type: {item.style} | ${item.price}
-          </h3>
-          <p>Capacity: {item.capacity}L</p>
-          <p>{item.description}</p>
-          <img src={item.imgURL} alt={item.title} id='tech-gear-img' />
-          <button className="add-to-wishlist" onClick={() => addToWishlist(item)}>Add</button>
-        </div>
-      ))}
+    <>
+    <div className="header-photo">
+    <div className="tech">
+    <h2 className="tech-text">Gear that works as hard as you do - built to last, ready for anything</h2>
     </div>
+    </div>
+    <div className='techgear'>
+      <TechCard />
+    </div>
+    </>
   );
 }
 

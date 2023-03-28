@@ -8,16 +8,16 @@ function Navigation() {
       <img src={Logo} alt="" className="logo"></img>
       <div className="nav-links">
       <NavLink to= "/" className="home-link">
-        HOME
+        Home
       </NavLink>
       <NavLink to= "/techGear" className="tech-gear-link">
-        TECH GEAR
+        Tech
       </NavLink>
       <NavLink to= "/photography" className="photo-gear-link">
-        PHOTOGRAPY GEAR
+        Photography
       </NavLink>
       <NavLink to= "/wishlist" className="wishlist-link">
-        WISHLIST
+        Wishlist
       </NavLink>
       </div>
     </div>

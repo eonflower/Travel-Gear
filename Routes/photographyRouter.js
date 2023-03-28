@@ -17,7 +17,7 @@ photographyRouter.get("/", async (req, res, next) => {
 // //GET by ID
 photographyRouter.get("/:id", async (req, res, next) => {
   try {
-    const photographyItems = await PhotoGear.findById(req.params.id);
+    const photographyItems = await Photography.findById(req.params.id);
     if (!photographyItems) {
     return res.status(404).send("PhotoGear item not found"); 
     } 
@@ -45,7 +45,7 @@ photographyRouter.post("/", (req, res, next) => {
 // //UPDATE by ID
 photographyRouter.put("/:id", async (req, res, next) => {
   try {
-    const updatedPhotographyItems = await PhotoGear.findByIdAndUpdate(
+    const updatedPhotographyItems = await Photography.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true }
@@ -63,7 +63,7 @@ photographyRouter.put("/:id", async (req, res, next) => {
 // //DELETE by ID
 photographyRouter.delete("/:id", async (req, res, next) => {
   try {
-    const deletedPhotographyItems = await PhotoGear.findByIdAndDelete(req.params.id);
+    const deletedPhotographyItems = await Photography.findByIdAndDelete(req.params.id);
     if (!deletedPhotographyItems) {
       return res.status(404).send("Photography item not found");
     }
