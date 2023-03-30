@@ -2,11 +2,14 @@ const express = require("express")
 const app = express()
 const morgan = require("morgan")
 const mongoose = require("mongoose")
+require("dotenv").config();
+
+const PORT = process.env.PORT || 9000;
 
 
 
 //Connect to DB
-mongoose.connect("mongodb+srv://mattrob101:finn1212@cluster0.msb08b3.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connection to database!");
   })
@@ -31,9 +34,9 @@ app.use("/wishlist", require("./Routes/wishlistRouter.js"))
 // ERROR HANDLER
 app.use((err, req, res, next) => {
   console.log(err)
-  res.send({errMsg: err.message})
+  return res.send({errMsg: err.message})
 })
 
-app.listen(9000, () => {
+app.listen(PORT, () => {
   console.log("Server is running on Port 9000")
 })

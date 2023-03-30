@@ -11,7 +11,7 @@ function PhotographyContextProvider(props) {
   useEffect(() => {
     axios.get('/api/photography')
       .then(res => setPhotoGear(res.data))
-      .catch(err => console.log(err))
+      .catch(err => err => console.log(err.response.data.errMsg))
 
       axios.get('/api/wishlist')
       .then(res => setPhotoWishlist(res.data))

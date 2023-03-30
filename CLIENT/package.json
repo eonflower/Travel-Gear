@@ -2,7 +2,8 @@
   "name": "travel-tech-gear",
   "private": true,
   "version": "0.0.0",
-  "proxy": "https://dev-trip.cyclic.app",
+  "proxy": "http://localhost:9000",
+  "host": "adorable-jersey-fly.cyclic.app",
   "type": "module",
   "scripts": {
     "dev": "vite",
