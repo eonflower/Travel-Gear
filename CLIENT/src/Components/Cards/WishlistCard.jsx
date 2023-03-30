@@ -11,13 +11,13 @@ export default function WishlistCard() {
     const trash = <i className="fa-solid fa-trash"></i>
 
     const deleteTechItem = (itemId) => {
-        axios.delete(`/api/wishlist/${itemId}`)
+        axios.delete(`https://adorable-jersey-fly.cyclic.app/api/wishlist/${itemId}`)
         .then(res => setTechWishlist(prevList => prevList.filter(item => item._id !== itemId)))
         .catch(err => console.log(err))
     }
 
     const deletePhotoItem = (itemId) => {
-        axios.delete(`/api/wishlist/${itemId}`)
+        axios.delete(`https://adorable-jersey-fly.cyclic.app/api/wishlist/${itemId}`)
         .then(res => setPhotoWishlist(prevList => prevList.filter(item => item._id !== itemId)))
         .catch(err => console.log(err))
     }
