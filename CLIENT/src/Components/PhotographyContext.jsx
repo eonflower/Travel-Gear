@@ -15,7 +15,7 @@ function PhotographyContextProvider(props) {
 
       axios.get('/api/wishlist')
       .then(res => setPhotoWishlist(res.data))
-      .catch(err => console.log(err))
+      .catch(err => err => console.log(err.response.data.errMsg))
   }, []);
 
   const handleAddToWishlist = (item) => {

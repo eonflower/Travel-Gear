@@ -21,7 +21,7 @@ function TechGearContextProvider(props) {
     //     });
     //     setTechGear(updatedTechGear);
     // })
-      .catch(err => console.log(err))
+      .catch(err => err => console.log(err.response.data.errMsg))
 
   }, []);
 

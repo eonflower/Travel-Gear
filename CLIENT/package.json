@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "proxy": "http://localhost:9000",
-  "host": "http://adorable-jersey-fly.cyclic.app",
   "type": "module",
   "scripts": {
     "dev": "vite",
