@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { TechGearContextProvider } from "./Components/TechGearContext";
 import { PhotographyContextProvider } from "./Components/PhotographyContext";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.render(
   <Router>
     <React.StrictMode>
       <TechGearContextProvider>
@@ -15,5 +15,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </PhotographyContextProvider>
       </TechGearContextProvider>
     </React.StrictMode>
-  </Router>
+  </Router>,
+  document.getElementById("root")
 );
